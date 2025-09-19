@@ -47,5 +47,9 @@ This is part of a series of practical Web3 QA examples for showcasing automation
 
 ---
 
-**Author:** [Raúl González Casado](https://www.linkedin.com/in/raulgonzalezcasado)  
+🧑‍💻 Autor:
+
+Raúl Casado – GaslessQA
+🔗 https://www.linkedin.com/in/gaslessqa/
+
 **License:** MIT
