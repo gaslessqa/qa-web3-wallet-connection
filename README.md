@@ -38,7 +38,8 @@ If MetaMask is not available or the connection is rejected, an error message wil
 
 ## 📷 Screenshot
 
-![screenshot](./screenshot.png) <!-- Puedes añadir una captura si quieres -->
+<img width="365" height="400" alt="image" src="https://github.com/user-attachments/assets/6458c34e-6b9d-4acc-a57f-11da283592c3" />
+
 
 ## 🧠 About
 
