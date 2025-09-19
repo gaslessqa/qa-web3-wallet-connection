@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QA Web3 - Wallet Connection Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    #status {
+      margin-top: 1rem;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Connect to Wallet</h2>
+    <button id="connectButton">Connect Wallet</button>
+    <div id="status"></div>
+  </div>
+
+  <script>
+    const connectButton = document.getElementById("connectButton");
+    const statusDiv = document.getElementById("status");
+
+    // Handle wallet connection
+    async function connectWallet() {
+      if (typeof window.ethereum === 'undefined') {
+        statusDiv.innerText = "Metamask is not installed.";
+        return;
+      }
+
+      try {
+        // Request account access from Metamask
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const account = accounts[0];
+        statusDiv.innerText = `Connected: ${account}`;
+      } catch (error) {
+        // Handle error if user rejects connection
+        statusDiv.innerText = `Connection failed: ${error.message}`;
+      }
+    }
+
+    connectButton.addEventListener("click", connectWallet);
+  </script>
+</body>
+</html>
